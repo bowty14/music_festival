@@ -1,0 +1,32 @@
+<h1>Freezing Woman Fest</h1>
+
+<h3>Tents by genre</h3>
+
+  <ul>
+    <% if @tents.each do |tent| %>
+      <li><%= tent.genre %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no tents booked.</p>
+<% end %>
+
+<form action="/tents" method="post">
+  <div class="form-group">
+    <label for="genre">Genre at tent</label>
+    <input id="band_genre" name="music_genre" class="form-control" type="text">
+  </div>
+  <button class="btn" type="submit">Add a tent!</button>
+</form>
+
+<form action="/tents/search">
+  <div class="form-group">
+    <label for="search">Search</label>
+    <input id ="search" name="search" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Search</button>
+</form>
+
+<% @tents.each do |tent| %>
+  <li><a href="/tents/<%= tent.id %>"><%= tent.genre %></a></li>
+<% end %>

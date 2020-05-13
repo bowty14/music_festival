@@ -1,0 +1,9 @@
+<% if @search_result.any? %>
+  <% @search_result.each do |result| %>
+    <ul>
+      <li><%= result.genre%></li>
+    </ul>
+    <% end %>
+  <% else%>
+    <p> There are no tents that match your search</p>
+  <% end %>
