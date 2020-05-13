@@ -34,4 +34,14 @@ describe('#Tent') do
       expect(Tent.all).to(eq([]))
     end
   end
+
+  describe('.find') do
+    it("finds a tent by id." ) do
+      tent1 = Tent.new("Metal", nil)
+      tent1.save()
+      tent2 = Tent.new("Folk", nil)
+      tent2.save()
+      expect(Tent.find(tent1.id)).to(eq(tent1))
+    end
+  end
 end

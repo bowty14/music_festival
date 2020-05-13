@@ -27,4 +27,9 @@ class Tent
     @@total_rows = 0
   end
 
+  def self.find(id)
+    @@tents[id]
+  end
+
+
 end
