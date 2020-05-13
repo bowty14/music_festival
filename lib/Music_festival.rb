@@ -6,7 +6,8 @@ class Tent
   @@total_rows = 0
   
   def initialize(stage, id)
-    @stage = stage
+    @stage = stage 
+    # stage = genre
     @id = id || @@total_rows += 1
   end
   
@@ -31,5 +32,16 @@ class Tent
     @@tents[id]
   end
 
+  def update(stage)
+    @stage = stage
+  end
 
+  def delete
+    @@tents.delete(self.id)
+  end
+
+  def self.search(stage)
+    array = @@tents.values.select {|tent| tent.stage == stage}
+    return array
+  end
 end
