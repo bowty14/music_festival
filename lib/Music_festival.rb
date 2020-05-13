@@ -22,4 +22,9 @@ class Tent
     self.stage() == tent_to_compare.stage()
   end
 
+  def self.clear
+    @@tents = {}
+    @@total_rows = 0
+  end
+
 end
